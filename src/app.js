@@ -70,16 +70,23 @@ function findSquareOfNumbers(myArray) {
 }
 
 // Progression 7:
-function sumOfSquares(myArray) {
-  const sumOfSquaresCallback = (accumulator, currentValue) =>
-    accumulator + currentValue ** 2;
-  const result = myArray.reduce(sumOfSquaresCallback, 0);
-  return result;
-}
 
 function multiply(myArray) {
-  const multiplyCallback = (accumulator, currentValue) =>
-    accumulator * currentValue;
-  const result = myArray.reduce(multiplyCallback, 1);
-  return result;
+  return myArray
+    .map(function (element) {
+      return element * 1;
+    })
+    .reduce(function (result, ele) {
+      return result * ele;
+    });
+}
+
+function sumOfSquares(myArray) {
+  return myArray
+    .map(function (ele) {
+      return ele ** 2;
+    })
+    .reduce(function (output, element) {
+      return output + element;
+    });
 }
